@@ -1,4 +1,7 @@
 <div class="mytest">
 	dlkfjlskdjflksdj
 	<mytestchild (tofatherEvent)="getChildEvent($event)" [getdata]="tochild"></mytestchild>
+	<a [routerLink]="['/mytest',9]">alink</a>
+	<button (click)="goback()">goback</button>
+	<button (click)="gotoDetail()">event_go_link</button>
 </div>

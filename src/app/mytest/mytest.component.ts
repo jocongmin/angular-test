@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MytestchildComponent} from './mytestchild.component';
+import { ActivatedRoute, Params,Router }   from '@angular/router';
+import { Location }   from '@angular/common';
 
 @Component({
   selector: 'mytest',
@@ -9,7 +11,8 @@ import {MytestchildComponent} from './mytestchild.component';
 })
 export class MytestComponent implements OnInit {
   tochild:number;
-  constructor() {
+  constructor(private route: ActivatedRoute,
+  private location: Location,private router:Router) {
     // Do stuff
     this.tochild=465465465;//i success get father,s data
   }
@@ -18,5 +21,16 @@ export class MytestComponent implements OnInit {
   }
   ngOnInit() {
     console.log('Hello mytest');
+    console.log(this.route.params)
+    this.route.params.forEach((params: Params) => {
+	    console.log(params);
+	  });
   }
+  goback(): void {
+	  this.location.back();
+	}
+	gotoDetail(): void {
+	  let link = ['/mytest',6];
+	  this.router.navigate(link);
+	}
 }

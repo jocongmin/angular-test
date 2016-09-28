@@ -6,7 +6,7 @@ import {MytestComponent} from './mytest/mytest.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent},
-  { path: 'mytest', component: MytestComponent},
+  { path: 'mytest/:id', component: MytestComponent},
 ];
 
 export const routing = RouterModule.forRoot(routes);
